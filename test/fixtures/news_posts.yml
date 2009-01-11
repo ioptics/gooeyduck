@@ -1,0 +1,12 @@
+one:
+  id: 1
+  title: MyString
+  summary: MyText
+  body: MyText
+  published_at: 2009-01-11 19:37:12
+two:
+  id: 2
+  title: MyString
+  summary: MyText
+  body: MyText
+  published_at: 2009-01-11 19:37:12

@@ -1,0 +1,19 @@
+%div[news_post]
+  %p.title
+    %strong Title
+    = h news_post.title
+  %p.summary
+    %strong Summary
+    = h news_post.summary
+  %p.body
+    %strong Body
+    = h news_post.body
+  %p.published_at
+    %strong Published at
+    = h news_post.published_at
+
+  = link_to 'Show', object_path(news_post)
+  |
+  = link_to 'Edit', edit_object_path(news_post)
+  |
+  = link_to 'Destroy', object_path(news_post), :confirm => 'Really destroy news_post?', :method => :delete

@@ -1,0 +1,12 @@
+%p
+  %label{:for => "news_post_title"} Title:
+  = f.text_field :title
+%p
+  %label{:for => "news_post_summary"} Summary:
+  = f.text_area :summary
+%p
+  %label{:for => "news_post_body"} Body:
+  = f.text_area :body
+%p
+  %label{:for => "news_post_published_at"} Published at:
+  = f.datetime_select :published_at
