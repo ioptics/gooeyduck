@@ -1,0 +1,4 @@
+%li<
+  = link_to small_post.title, small_post
+  %br/
+  %small.date= small_post.created_at.strftime('%d/%m/%Y at %I:%H%p').downcase

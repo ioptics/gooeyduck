@@ -1,0 +1,17 @@
+%div{:class => "form_item form_#{field_type} cf", :id => "#{object_name}_#{field_name}_field"}
+  .form_label<
+    %label{:for => "#{object_name}_#{field_name}"}><
+      = label_text
+      - if local_assigns[:required] == true
+        %span.required *
+
+  %div{:class => 'form_field'}
+    = element
+    - unless local_assigns[:sub_field].blank?
+      %div.sub_field= sub_field
+
+  - unless local_assigns[:error].blank?
+    %div.form_error= error
+
+  - unless local_assigns[:help].blank?
+    %div.form_help= help

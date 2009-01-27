@@ -1,0 +1,68 @@
+!grey ||= #ccc
+
+@import reset.sass
+@import clearfix.sass
+@import grid.sass
+@import text.sass
+
++global-reset
+
+body
+  +text
+ 
+.container_12
+  +grid-system(12)
+ 
+.container_16
+  +grid-system(16)
+
+// News Styling    
+.news_post 
+  .links
+    :float left
+    :list-style none
+    :border-top 1px solid #ccc
+    :border-left 1px solid #ccc
+    :margin 0
+    +clearfix
+    li
+      :float left
+      :margin 0
+      :border-right 1px solid #ccc
+      a
+        :font-size .8em
+        :display block
+        :float left
+        :padding 2px 5px
+        
+small.date
+  :color #BFBFBF
+        
+// Forms Styling
+.form_item
+  :border-bottom 1px solid #DBDBDB
+  :padding 15px 10px
+  +clearfix
+  .form_label
+    :float left
+    :width 160px
+    label
+      :cursor pointer
+  .form_field
+    :float left
+    :width 440px
+    input, textarea
+      :width 428px
+      :border 1px solid #9D9D9D
+      :padding 5px
+    textarea
+      :font-size 13px
+      :font-family= !ninesixty_font_family !important
+      :line-height 1.6em
+      
+.form_buttons
+  :padding 10px 10px 10px 170px
+  
+  
+  
+  

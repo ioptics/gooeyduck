@@ -1,0 +1,7 @@
+%div#recent_posts.box
+  %h3 Recent Posts
+  
+  %ul
+    = render :partial => 'partials/small_post', :collection => local_assigns[:posts]
+    
+  %hr/
