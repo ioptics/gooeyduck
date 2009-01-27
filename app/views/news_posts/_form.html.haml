@@ -1,12 +1,9 @@
-%p
-  %label{:for => "news_post_title"} Title:
-  = f.text_field :title
-%p
-  %label{:for => "news_post_summary"} Summary:
-  = f.text_area :summary
-%p
-  %label{:for => "news_post_body"} Body:
-  = f.text_area :body
-%p
-  %label{:for => "news_post_published_at"} Published at:
-  = f.datetime_select :published_at
+= f.text_field :title
+= f.text_field :tag_list, :label => 'Tags'
+= f.text_area :body, :rows => 10
+= f.text_area :summary, :rows => 3
+= f.datetime_select :published_at
+
+.form_buttons
+  = f.submit 'Save'
+  %span= "or #{link_to 'cancel', objects_path}"

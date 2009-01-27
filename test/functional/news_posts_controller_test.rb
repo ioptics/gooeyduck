@@ -20,11 +20,12 @@ class NewsPostsControllerTest < ActionController::TestCase
   end
 
   context "on POST to :create" do
-    setup { post :create, :news_post => {:title => 'Test News Post'} }
+    setup { post :create, :news_post => {
+      :title => 'Updated Test News Post', :body => 'Test News Post Body'} }
     
     should_change "NewsPost.count"
-    should_set_the_flash_to /created/i
-    should_redirect_to 'news_posts_path'
+    should_set_the_flash_to /saved/i
+    should_redirect_to 'news_post_path(@news_post)'
   end
   
   context "on GET :edit" do
@@ -34,16 +35,16 @@ class NewsPostsControllerTest < ActionController::TestCase
   
   context "on POST to :update" do
     context "with valid data" do
-      setup { put :update, :id => 1, :news_post => {:title => 'Updated Test News Post'} }
-      should_set_the_flash_to /updated/i
-      should_redirect_to 'news_posts_path'
+      setup { put :update, :id => 1, :news_post => {
+        :title => 'Updated Test News Post', :body => 'Test News Post Body'} }
+      should_set_the_flash_to /saved/i
+      should_redirect_to 'news_post_path(@news_post)'
     end
     
     context "with invalid data" do
       setup { put :update, :id => 1, :news_post => {:title => ''} }
       should_set_the_flash_to /errors/i
       should_render_template :edit
-      should_respond_with :success
     end
   end
   

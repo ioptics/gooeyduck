@@ -1,11 +1,4 @@
-%h1 Editing news_post
+%h2 Editing News Post
 
-= error_messages_for :news_post
-
-- form_for(:news_post, :url => object_url, :html => { :method => :put }) do |f|
+- clever_form_for(@current_object, :url => object_path, :html => { :method => :put }) do |f|
   = render :partial => "form", :locals => {:f => f}
-  %p= submit_tag "Update"
-
-= link_to 'Show', object_path
-|
-= link_to 'Back', objects_path

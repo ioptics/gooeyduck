@@ -1,5 +1,7 @@
-%h1 Listing news_posts
-
-= render :partial => 'news_post', :collection => current_objects
-
-= link_to 'New news_post', new_object_path 
+- content_for :title do
+  Listing Blog Posts
+  
+.list
+  %h2.title Listing Blog Posts
+  = render :partial => 'news_post', :collection => current_objects
+  = link_to 'Add New Post', new_object_path

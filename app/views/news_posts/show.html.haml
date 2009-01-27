@@ -1,21 +1,17 @@
-%h1 Viewing news_post
+%h2= h current_object.title
+%p.published_at<
+  Published on
+  = current_object.published_at.strftime('%d/%m/%Y at %I:%M%p').downcase
+%p.tagged_with<
+  Tagged with:
+  = current_object.tags.collect {|c| link_to_tag c}.join(', ')
 
-%div[current_object]
-  %p.title
-    %strong Title
-    = h current_object.title
-  %p.summary
-    %strong Summary
-    = h current_object.summary
-  %p.body
-    %strong Body
-    = h current_object.body
-  %p.published_at
-    %strong Published at
-    = h current_object.published_at
-
-= link_to 'Edit', edit_object_path
-|
-= link_to 'Destroy', object_path, :confirm => 'Really destroy news_post?', :method => :delete
-|
-= link_to 'Back', objects_path
+.body
+  = current_object.body
+  
+%ul
+  -if logged_in?
+    %li= link_to 'Back', objects_path
+    %li= link_to 'Edit', edit_object_path(current_object)
+    %li= link_to 'Destroy', object_path(current_object), :confirm => 'Are you sure you want to delete this post?', :method => :delete
+  
